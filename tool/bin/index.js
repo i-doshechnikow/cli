@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-const arg = require("arg");
+import arg from "arg";
+import chalk from "chalk";
 
 const help = () => {
   console.log(`there are 2 comands:
@@ -16,9 +17,9 @@ try {
 
   // console.log(process.argv.splice(2));
   if (args["--start"]) {
-    console.log("starting...");
+    console.log(chalk.bgWhiteBright("starting..."));
   }
 } catch (e) {
-  console.log(e.message);
+  console.log(chalk.bgRedBright(e.message));
   help();
 }
